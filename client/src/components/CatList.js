@@ -9,7 +9,7 @@ const deleteCat = (id, props) => {
     }
   })
     .then(res => res.json())
-    .then(result => props.deleteCat(id));
+    .then(result => props.deleteCat(this.state.deleteCat(id)));
 };
 
 const CatList = props => (
@@ -20,11 +20,7 @@ const CatList = props => (
         {cat.name} &nbsp;
         <Link to={`/cats/${cat._id}`}>details</Link>
         &nbsp;
-        <button
-          onClick={() => deleteCat(cat._id, props)}
-          type="submit"
-          variant="contained"
-        >
+        <button onClick={() => deleteCat(cat._id, props)} type="submit">
           Delete
         </button>
       </p>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class CatActions extends Component {
   state = {
@@ -47,29 +48,28 @@ class CatActions extends Component {
             id="createCatName"
             label="Cat Name"
             value={this.state.createCatName}
-            variant="outlined"
           />
           <input
             onChange={this.handleTextChange}
             id="createCatBreed"
             label="Breed"
             value={this.state.createCatBreed}
-            variant="outlined"
           />
           <input
             onChange={this.handleTextChange}
             id="createCatAge"
             label="Age"
             value={this.state.createCatAge}
-            variant="outlined"
           />
-          <button type="submit" variant="contained">
-            Create Cat
-          </button>
+          <button type="submit">Create Cat</button>
         </form>
       </div>
     );
   }
 }
+
+CatActions.propTypes = {
+  createCat: PropTypes.func
+};
 
 export default CatActions;

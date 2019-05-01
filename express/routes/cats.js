@@ -11,9 +11,7 @@ router.get("/", (request, response) => {
 // Create a route for creating a movie
 // This corresponds to item 2 in the controller
 router.post("/", (request, response) => {
-  CatsController.createCat(request.body)
-    .then(res => response.json(res))
-    .catch(err => console.log(err));
+  CatsController.createCat(request.body).then(res => response.json(res));
 });
 
 // Create a route for deleting ONE movie by it's name

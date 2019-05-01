@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import CatList from "../containers/CatList";
 import CatActions from "../containers/CatActions";
 
@@ -12,7 +12,7 @@ class Home extends Component {
 
   render() {
     return (
-      <Fragment>
+      <div>
         <div>
           <h1>Cats</h1>
         </div>
@@ -22,7 +22,7 @@ class Home extends Component {
             <CatActions />
           </div>
         </div>
-      </Fragment>
+      </div>
     );
   }
 }

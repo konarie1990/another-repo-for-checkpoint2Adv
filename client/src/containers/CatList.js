@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import CatList from "../components/CatList";
 import { deleteCat } from "../actions/index";
 
-const mapStateToProps = state => {
+const mapStateToProps = store => {
   return {
-    cats: state.cats
+    cats: store.cats
   };
 };
 
