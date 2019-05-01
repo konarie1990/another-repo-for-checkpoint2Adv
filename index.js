@@ -16,5 +16,5 @@ app.use("/api/cats", CatRoutes);
 app.get("/", (req, res) => res.send("CATS"));
 
 app.listen(port, () => {
-  console.log(`Listening on port:${port}`);
+  console.log(`Cat App is running on localhost port:${port}`);
 });

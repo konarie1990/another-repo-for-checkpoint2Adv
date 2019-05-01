@@ -23,9 +23,9 @@ class CatActions extends Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        name: this.state.createCatName,
-        breed: this.state.createCatBreed,
-        age: this.state.createCatAge
+        createCatName: this.state.createCatName,
+        createCatBreed: this.state.createCatBreed,
+        createCatAge: this.state.createCatAge
       })
     })
       .then(res => res.json())
