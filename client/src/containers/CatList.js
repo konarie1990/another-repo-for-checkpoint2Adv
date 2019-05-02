@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CatList from "../components/CatList";
-import { deleteCat } from "../actions/index";
+import { deleteCat } from "../actions";
 
 const mapStateToProps = store => {
   return {

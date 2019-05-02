@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const deleteCat = (id, props) => {
+  console.log("list component delete", id, props);
   fetch(`/api/cats/${id}`, {
     method: "DELETE",
     headers: {
@@ -9,7 +11,7 @@ const deleteCat = (id, props) => {
     }
   })
     .then(res => res.json())
-    .then(result => props.deleteCat(this.state.deleteCat(id)));
+    .then(results => props.deleteCat(id));
 };
 
 const CatList = props => (
@@ -19,13 +21,17 @@ const CatList = props => (
       <p key={index}>
         {cat.name} &nbsp;
         <Link to={`/cats/${cat._id}`}>details</Link>
-        &nbsp;
+        &nbsp;{" "}
         <button onClick={() => deleteCat(cat._id, props)} type="submit">
-          Delete
+          Delete Cat
         </button>
       </p>
     ))}
   </div>
 );
+
+CatList.propTypes = {
+  cats: PropTypes.array
+};
 
 export default CatList;

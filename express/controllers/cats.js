@@ -9,6 +9,7 @@ const getAll = () => {
 
 // 2. create a function called createMovie that accepts a "movie" param
 const createCat = cat => {
+  // console.log("controller create", cat);
   // insert movie from POST request into db
   return CatsModel.create({
     name: cat.name,
@@ -19,12 +20,14 @@ const createCat = cat => {
 
 // 3. create a function called deleteMovie that accepts a "movieName" param
 const deleteCat = id => {
+  // console.log("controller deleteCat", id);
   return CatsModel.deleteOne({ _id: id });
 };
 
 // 4. create a function called getById that accepts an "id" param and finds one ticket
 // hint: in your db query, you will use objectId like this: ObjectId(id)
 const getById = id => {
+  // console.log("controller getById", id);
   return CatsModel.findOne({ _id: ObjectId(id) });
 };
 

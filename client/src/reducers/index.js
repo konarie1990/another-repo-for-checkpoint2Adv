@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 
 const cats = (state = [], action) => {
+  console.log("reducer", action.type, action.value);
   const newState = [...state];
   switch (action.type) {
     case "LIST_CATS":

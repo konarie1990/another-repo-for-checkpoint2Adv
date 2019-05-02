@@ -16,6 +16,7 @@ class CatActions extends Component {
 
   createCat = e => {
     console.log("button clicked");
+    console.log("catActions component createCat", this.state);
     e.preventDefault();
     fetch("/api/cats", {
       method: "POST",
@@ -23,12 +24,14 @@ class CatActions extends Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        createCatName: this.state.createCatName,
-        createCatBreed: this.state.createCatBreed,
-        createCatAge: this.state.createCatAge
+        name: this.state.createCatName,
+        breed: this.state.createCatBreed,
+        age: this.state.createCatAge
       })
     })
+      // ** change text back to json (use res.text() to debug)
       .then(res => res.json())
+      // .then(text => console.log(text))
       .then(result => this.props.createCat(result))
       .then(() => {
         this.setState({
@@ -43,18 +46,21 @@ class CatActions extends Component {
     return (
       <div>
         <form onSubmit={this.createCat}>
+          <p>Name</p>
           <input
             onChange={this.handleTextChange}
             id="createCatName"
             label="Cat Name"
             value={this.state.createCatName}
           />
+          <p>Breed</p>
           <input
             onChange={this.handleTextChange}
             id="createCatBreed"
             label="Breed"
             value={this.state.createCatBreed}
           />
+          <p>Age</p>
           <input
             onChange={this.handleTextChange}
             id="createCatAge"

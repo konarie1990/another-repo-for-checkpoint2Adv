@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
 
 class CatDetails extends Component {
   state = {
@@ -6,6 +7,7 @@ class CatDetails extends Component {
   };
 
   componentDidMount() {
+    console.log("mounted", this.props);
     const catId = this.props.match.params.id;
     fetch(`/api/cats/${catId}`)
       .then(res => res.json())
@@ -31,5 +33,9 @@ class CatDetails extends Component {
     );
   }
 }
+
+CatDetails.propTypes = {
+  match: PropTypes.object
+};
 
 export default CatDetails;
