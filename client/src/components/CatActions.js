@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Button, Form } from "react-bootstrap";
 
 class CatActions extends Component {
   state = {
@@ -44,8 +45,8 @@ class CatActions extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.createCat}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Form onSubmit={this.createCat}>
           <p>Name</p>
           <input
             onChange={this.handleTextChange}
@@ -67,8 +68,8 @@ class CatActions extends Component {
             label="Age"
             value={this.state.createCatAge}
           />
-          <button type="submit">Create Cat</button>
-        </form>
+          <Button type="submit">Create Cat</Button>
+        </Form>
       </div>
     );
   }

@@ -16,8 +16,8 @@ class CatDetails extends Component {
 
   render() {
     return (
-      <Fragment>
-        <div>
+      <Fragment style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <h1>Cat</h1>
         </div>
         <div>

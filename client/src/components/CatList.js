@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+
 import PropTypes from "prop-types";
 
 const deleteCat = (id, props) => {
@@ -15,18 +17,22 @@ const deleteCat = (id, props) => {
 };
 
 const CatList = props => (
-  <div>
-    <h3>List of Cats</h3>
-    {props.cats.map((cat, index) => (
-      <p key={index}>
-        {cat.name} &nbsp;
-        <Link to={`/cats/${cat._id}`}>details</Link>
-        &nbsp;{" "}
-        <button onClick={() => deleteCat(cat._id, props)} type="submit">
-          Delete Cat
-        </button>
-      </p>
-    ))}
+  <div style={{ display: "flex", justifyContent: "center" }}>
+    <div style={{ display: "flexColumn", justifyContent: "center" }}>
+      <h4 style={{ display: "flex", justifyContent: "center" }}>
+        List of Cats
+      </h4>
+      {props.cats.map((cat, index) => (
+        <p key={index}>
+          {cat.name} &nbsp;
+          <Link to={`/cats/${cat._id}`}>details</Link>
+          &nbsp;{" "}
+          <Button onClick={() => deleteCat(cat._id, props)} type="submit">
+            Delete Cat
+          </Button>
+        </p>
+      ))}
+    </div>
   </div>
 );
 

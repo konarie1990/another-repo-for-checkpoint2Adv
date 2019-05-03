@@ -12,9 +12,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ justifyContent: "center" }}>
         <div>
-          <h1>Cats</h1>
+          <h1 style={{ display: "flex", justifyContent: "center" }}>CATS</h1>
         </div>
         <div>
           <div>
